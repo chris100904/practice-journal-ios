@@ -1,0 +1,49 @@
+# iOS
+## User settings
+xcuserdata/
+*.xcuserstate
+*.xcworkspace/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Node.js
+node_modules/
+npm-debug.log
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# MongoDB
+*.log
+data/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Build generated
+build/
+DerivedData/
+dist/
+
+# Dependency directories
+Pods/
+Carthage/Build/

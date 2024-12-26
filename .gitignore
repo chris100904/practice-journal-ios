@@ -47,3 +47,6 @@ dist/
 # Dependency directories
 Pods/
 Carthage/Build/
+
+# Spotify
+backend/src/config/spotify.js

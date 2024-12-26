@@ -1,10 +1,11 @@
 import SwiftUI
 
-struct ProfileView: View {
+struct JournalView: View {
     var body: some View {
         VStack {
-            Text("Profile View")
+            Text("Journal View")
         }
         .padding()
     }
 }
+

@@ -40,6 +40,7 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
+        // .background(Color("NavbarColor"))
         .accentColor(Color("NavbarColor"))
     }
 }

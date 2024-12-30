@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PracticeView: View {
     @StateObject private var timerManager = TimerManager()
+    @StateObject private var practiceSessionManager = PracticeSessionManager.shared
     @State private var isRecording = false
     @State private var showNotes = false
     @State private var isMetronomeOn = false
@@ -21,9 +22,53 @@ struct PracticeView: View {
                             .imageScale(.large)
                     }
                     Spacer()
+                    
+                    if timerManager.elapsedTime > 0 {
+                        Button(action: {
+                            if !timerManager.isPaused {
+                                timerManager.toggleTimer()
+                            }
+                            
+                            let alert = UIAlertController(title: "Are you sure you're done practicing?", 
+                                                        message: nil, 
+                                                        preferredStyle: .alert)
+                            
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in 
+                                // Save practice session
+                                let saved = PracticeSessionManager.shared.savePracticeSession(
+                                    duration: self.timerManager.elapsedTime,
+                                    notes: self.notes,
+                                    metronomeBPM: self.isMetronomeOn ? Int(self.metronomeValue) : nil,
+                                    recordingPath: self.isRecording ? "path_to_recording" : nil
+                                )
+                                
+                                if saved {
+                                    self.timerManager.resetTimer()
+                                    self.notes = ""
+                                    self.isRecording = false
+                                    self.isMetronomeOn = false
+                                }
+                            }))
+                            
+                            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in 
+                                if !timerManager.isPaused {
+                                    timerManager.toggleTimer()
+                                }
+                            }))
+                            
+                            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                            let rootViewController = windowScene.windows.first?.rootViewController {
+                                rootViewController.present(alert, animated: true, completion: nil)
+                            }
+                        }) {
+                            Image(systemName: "stop.fill")
+                                .foregroundColor(.white)
+                                .imageScale(.large)
+                        }
+                    }
                 }
                 .padding()
-                .background(Color("PracticeViewHeaderColor")) // Dark green background
+                .background(Color("PracticeViewHeaderColor"))
                 
                 // Timer display
                 Text(timeString(from: timerManager.elapsedTime))
@@ -161,3 +206,4 @@ class TimerManager: ObservableObject {
         timer?.invalidate()
     }
 }
+

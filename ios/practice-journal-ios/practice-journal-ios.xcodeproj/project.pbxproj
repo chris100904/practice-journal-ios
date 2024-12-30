@@ -26,6 +26,7 @@
 		A7BD5BDD2D1A497A004CE536 /* practice_journal_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD5BDC2D1A497A004CE536 /* practice_journal_iosTests.swift */; };
 		A7BD5BE72D1A497A004CE536 /* practice_journal_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD5BE62D1A497A004CE536 /* practice_journal_iosUITests.swift */; };
 		A7BD5BE92D1A497A004CE536 /* practice_journal_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD5BE82D1A497A004CE536 /* practice_journal_iosUITestsLaunchTests.swift */; };
+		A7D195F62D2249AF00561DC4 /* PracticeSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D195F42D2249AF00561DC4 /* PracticeSessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		A7BD5BE22D1A497A004CE536 /* practice-journal-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "practice-journal-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BD5BE62D1A497A004CE536 /* practice_journal_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practice_journal_iosUITests.swift; sourceTree = "<group>"; };
 		A7BD5BE82D1A497A004CE536 /* practice_journal_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practice_journal_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A7D195F42D2249AF00561DC4 /* PracticeSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		A7BD5BCA2D1A4978004CE536 /* practice-journal-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A7D195F52D2249AF00561DC4 /* Managers */,
 				A7BD5BCB2D1A4978004CE536 /* practice_journal_iosApp.swift */,
 				A7BD5BCD2D1A4978004CE536 /* ContentView.swift */,
 				A73DB8C82D1E089200EBDC31 /* Models */,
@@ -201,6 +204,14 @@
 				A7BD5BE82D1A497A004CE536 /* practice_journal_iosUITestsLaunchTests.swift */,
 			);
 			path = "practice-journal-iosUITests";
+			sourceTree = "<group>";
+		};
+		A7D195F52D2249AF00561DC4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A7D195F42D2249AF00561DC4 /* PracticeSessionManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +352,7 @@
 				A73DB8D32D1E089200EBDC31 /* PracticeSession.swift in Sources */,
 				A73DB8CD2D1E089200EBDC31 /* SearchBar.swift in Sources */,
 				A73DB8D02D1E089200EBDC31 /* PracticeView.swift in Sources */,
+				A7D195F62D2249AF00561DC4 /* PracticeSessionManager.swift in Sources */,
 				A73DB8CE2D1E089200EBDC31 /* HomeView.swift in Sources */,
 				A73DB8CF2D1E089200EBDC31 /* JournalView.swift in Sources */,
 				A73DB8D42D1E089200EBDC31 /* SpotifyTrack.swift in Sources */,

@@ -1,4 +1,6 @@
-class PracticeSessionManager {
+import SwiftUI
+
+class PracticeSessionManager: ObservableObject {
     static let shared = PracticeSessionManager()
     
     func savePracticeSession(duration: TimeInterval, 
@@ -9,7 +11,7 @@ class PracticeSessionManager {
             userId: "current_user_id", // Replace with actual user ID
             duration: duration,
             notes: notes,
-            metronomeBPM: metronomeBPM,
+            // metronomeBPM: metronomeBPM,
             recordingPath: recordingPath
         )
         
